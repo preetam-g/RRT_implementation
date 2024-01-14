@@ -3,7 +3,6 @@
 
 import turtle as tt  # using turtle for visualization
 import math # calculations
-import random # selectinng random location on coordinate plane
 
 # defining screen limits and other constants
 HEIGHT = 700
@@ -55,8 +54,10 @@ class Node(tt.Turtle):
         return (self.xcor(), self.ycor())
     
     def get_nearest(self, nodes: list) -> tuple:
+        
         dist = (HEIGHT + WIDTH)*4
         res = None
+        
         for node in nodes:
             temp = distance(self.get_pos(), node.get_pos())
             if temp < dist: 
@@ -64,3 +65,6 @@ class Node(tt.Turtle):
                 dist = temp
         
         return node
+    
+    def path_collides(self, node_near: tuple):
+        pass

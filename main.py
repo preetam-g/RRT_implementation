@@ -38,9 +38,11 @@ while len(stones) < obj.NO_OF_OBS:
 
 nodes = []
 for x in range(10):
+
     randx = random.choice(range(-obj.WIDTH//2 + obj.BUFF, obj.WIDTH//2 - obj.BUFF)) # assigning random locations for obstacles
     randy = random.choice(range(-obj.HEIGHT//2 + obj.BUFF, obj.HEIGHT//2 - obj.BUFF))
     temp = obj.Node((randx, randy))
+    
     nodes.append((temp, randx, randy))
     screen.update()
 
