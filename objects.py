@@ -10,7 +10,7 @@ HEIGHT = 600
 WIDTH = 600
 BUFF = int(WIDTH/10) # buffer to make sure they the random samples go out of the screen
 OBS_RAD = 1.2 # used for obstacle size scaling 
-NO_OF_OBS = 1 # number of obstacles on screen
+NO_OF_OBS = 40 # number of obstacles on screen
 STEP_MAX = 10 # max step distance in an iteration
 SAFE = 25 # with OBS_RAD as 1.2, SAFE is the distance from center of obs where the obstacle will not collide with node.  
 
@@ -26,6 +26,7 @@ class Obstacle(tt.Turtle): # creating obstacle object which is child of turtle c
     def __init__(self) -> None:
         super().__init__()
         self.shape("circle")
+        self.color("black")
         self.shapesize(stretch_len = OBS_RAD, stretch_wid = OBS_RAD)
         self.penup()
 
@@ -40,13 +41,26 @@ class Obstacle(tt.Turtle): # creating obstacle object which is child of turtle c
         return True
 
 
-class Node(tt.turtle):
+class Node(tt.Turtle):
 
     def __init__(self, position: tuple) -> None:
         super().__init__()
         self.shape("circle")
+        self.color("blue")
+        self.shapesize(stretch_len = 1.1, stretch_wid = 1.1)
         self.penup()
         self.goto(position[0], position[1])
 
     def get_pos(self) -> tuple:
         return (self.xcor(), self.ycor())
+    
+    def get_nearest(self, nodes: list) -> tuple:
+        dist = (HEIGHT + WIDTH)*4
+        res = None
+        for node in nodes:
+            temp = distance(self.get_pos(), node.get_pos())
+            if temp < dist: 
+                res = node
+                dist = temp
+        
+        return node
