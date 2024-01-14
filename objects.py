@@ -6,11 +6,11 @@ import math # calculations
 import random # selectinng random location on coordinate plane
 
 # defining screen limits and other constants
-HEIGHT = 600
-WIDTH = 600
-BUFF = int(WIDTH/10) # buffer to make sure they the random samples go out of the screen
+HEIGHT = 700
+WIDTH = 800
+BUFF = int(WIDTH/15) # buffer to make sure they the random samples go out of the screen
 OBS_RAD = 1.2 # used for obstacle size scaling 
-NO_OF_OBS = 40 # number of obstacles on screen
+NO_OF_OBS = 30 # number of obstacles on screen
 STEP_MAX = 10 # max step distance in an iteration
 SAFE = 25 # with OBS_RAD as 1.2, SAFE is the distance from center of obs where the obstacle will not collide with node.  
 
@@ -33,10 +33,10 @@ class Obstacle(tt.Turtle): # creating obstacle object which is child of turtle c
     def get_pos(self) -> tuple:
         return (self.xcor(), self.ycor())
 
-    def start_goal_safe(self, start_node: tuple, goal_node: tuple) -> bool:
+    def start_goal_safe(self, start_node_loc: tuple, goal_node_loc: tuple) -> bool:
         
-        if distance(start_node, self.get_pos()) <= SAFE: return False
-        elif distance(goal_node, self.get_pos()) <= SAFE: return False
+        if distance(start_node_loc, self.get_pos()) <= SAFE: return False
+        elif distance(goal_node_loc, self.get_pos()) <= SAFE: return False
         
         return True
 
@@ -47,7 +47,7 @@ class Node(tt.Turtle):
         super().__init__()
         self.shape("circle")
         self.color("blue")
-        self.shapesize(stretch_len = 1.1, stretch_wid = 1.1)
+        self.shapesize(stretch_len = 0.8, stretch_wid = 0.8)
         self.penup()
         self.goto(position[0], position[1])
 
