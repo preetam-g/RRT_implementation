@@ -14,6 +14,7 @@ NO_OF_OBS = 1 # number of obstacles on screen
 STEP_MAX = 10 # max step distance in an iteration
 SAFE = 25 # with OBS_RAD as 1.2, SAFE is the distance from center of obs where the obstacle will not collide with node.  
 
+
 class Obstacle(tt.Turtle): # creating obstacle object which is child of turtle class in turtle module.
 
     def __init__(self) -> None:

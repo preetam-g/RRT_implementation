@@ -8,7 +8,7 @@ screen.setup(width = obj.WIDTH, height = obj.HEIGHT)
 screen.tracer(0) # refreshes screen only when screen.update() is used
 
 
-stones = []
+stones = [] # list that stores the obstacles and their locations
 for x in range(obj.NO_OF_OBS):
 
     temp = obj.Obstacle() # temporary obstacle variable
