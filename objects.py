@@ -10,4 +10,6 @@ HEIGHT = 800
 WIDTH = 1000
 BUFF = int(WIDTH/10) # buffer to make sure they the random samples go out of the screen
 OBS_RAD = 10 # obstacle radius 
-STEP_max = 10 # max step distance in an iteration
+STEP_MAX = 10 # max step distance in an iteration
+
+
