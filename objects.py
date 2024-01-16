@@ -9,7 +9,7 @@ HEIGHT = 700
 WIDTH = 800
 BUFF = int(WIDTH/15) # buffer to make sure they the random samples go out of the screen
 OBS_RAD = 1.2 # used for obstacle size scaling 
-NO_OF_OBS = 10 # number of obstacles on screen
+NO_OF_OBS = 20 # number of obstacles on screen
 STEP_MAX = 20 # max step distance in an iteration
 SAFE = 25 # with OBS_RAD as 1.2, SAFE is the distance from center of obs where the obstacle will not collide with node.  
 
@@ -42,8 +42,8 @@ class Obstacle(tt.Turtle): # creating obstacle object which is child of turtle c
     # to make sure random generated obstacles don't collide with start and end location
     def start_goal_safe(self, start_node_loc: tuple, goal_node_loc: tuple) -> bool:
         
-        if distance(start_node_loc, self.get_pos()) < SAFE: return False
-        elif distance(goal_node_loc, self.get_pos()) < SAFE: return False
+        if distance(start_node_loc, self.get_pos()) < 3*SAFE: return False
+        elif distance(goal_node_loc, self.get_pos()) < 3*SAFE: return False
         
         return True
     
