@@ -14,6 +14,10 @@ Random module has been used to generate random locations for obstacles, start, e
 Classes have been used to create obstacle class and node class. These classes are child classes of "Turtle" class in turtle module.
 Attributes and Methods have been defined based on requirement of the algorithm. 
 
+# How to run code
+Make sure the main.py and objects.py are in the same directory before running the program.
+In terminal, move to the directory you have saved the files in. 
+Then use command "python3 main.py" if it's ubuntu or use "python main.py" if it's VS Code.
 
 # Test results
 ![test_result_1](https://github.com/preetam-g/RRT_implementation/assets/118665778/3941af10-0776-42f8-bc34-6d97cf170b61)
