@@ -5,10 +5,17 @@ Implementing an autonomous robotic path planning algorithm namely Rapidly explor
 Obstacles are treated as circles centered at a given location on the screen. 
 I have not added any method to add obstacles manually, for testing purposes I have set fixed start, end points and obstacles in between them. I have commented out the code where we can input start and end location. I have also written code for random obstacle generation which can be replaced with manually addition later on if required.
 
-# Working 
-Turtle module of python has been used for visualization of 
+# Modules used 
+Turtle module of python has been used for visualization of the simulation. 
+Time module has been used to slow down the simulation in order to see the expansion of tree. 
+Random module has been used to generate random locations for obstacles, start, end locations.
 
-# Here are images of implementation
+# Concepts 
+Classes have been used to create obstacle class and node class. These classes are child classes of "Turtle" class in turtle module.
+Attributes and Methods have been defined based on requirement of the algorithm. 
+
+
+# Test results
 ![test_result_1](https://github.com/preetam-g/RRT_implementation/assets/118665778/3941af10-0776-42f8-bc34-6d97cf170b61)
 ![test_result_2](https://github.com/preetam-g/RRT_implementation/assets/118665778/416bbf56-d64e-4586-9471-a540d8b979cd)
 ![test_result_3](https://github.com/preetam-g/RRT_implementation/assets/118665778/327294b0-fa7a-4387-8008-5c80713f3c64)
