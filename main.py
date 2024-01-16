@@ -21,7 +21,6 @@ generated = False
 decide_obs = input("choose (1, 2, 3): ")
 while not generated:
 
-    
     if decide_obs == '1':  
 
         stones = [obj.Obstacle((0, 0)), obj.Obstacle((20, -20)), obj.Obstacle((-20, 20)), obj.Obstacle((20, 20)), obj.Obstacle((170, 160)), obj.Obstacle((100, 150)), obj.Obstacle((-35, 35)), obj.Obstacle((35, -35)), obj.Obstacle((50, -50)), obj.Obstacle((-50, 50)), obj.Obstacle((-60, 60)), obj.Obstacle((start_loc[0]+30, start_loc[1]+35))] 
@@ -30,9 +29,11 @@ while not generated:
 
     elif decide_obs == '2':
 
-        start_loc = random.choice(range(-obj.WIDTH//2 + 2*obj.BUFF, obj.WIDTH//2 - 2*obj.BUFF)) # assigning random locations for obstacles
-        end_loc = random.choice(range(-obj.HEIGHT//2 + 2*obj.BUFF, obj.HEIGHT//2 - 2*obj.BUFF))
+        # random start, end locations
+        start_loc = tuple(random.sample(range(-obj.WIDTH//2 + 2*obj.BUFF, obj.WIDTH//2 - 2*obj.BUFF), 2))
+        end_loc = tuple(random.sample(range(-obj.HEIGHT//2 + 2*obj.BUFF, obj.HEIGHT//2 - 2*obj.BUFF), 2))
 
+        # random obstacles
         while len(stones) < obj.NO_OF_OBS:
 
             # temporary obstacle variable
@@ -48,7 +49,7 @@ while not generated:
 
     elif decide_obs == '3':
 
-        print(f"give coordinates of start node, x then y both absolute value less than {min(obj.HEIGHT, obj.WIDTH)}:", end = " ")
+        print(f"give coordinates of start node, x then y both absolute value less than {min(obj.HEIGHT, obj.WIDTH)*0.9}:", end = " ")
         start_loc = IN()
         print(f"similarly for end location:", end = " ")
         end_loc = IN()
