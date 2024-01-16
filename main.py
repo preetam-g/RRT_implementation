@@ -18,9 +18,9 @@ stones = [] # list that stores the obstacles objects
 
 print("How do you want your arena? 1: preset, 2: random, 3: you can set everything manually.")
 generated = False
-decide_obs = input("choose (1, 2, 3): ")
 while not generated:
-
+    
+    decide_obs = input("choose (1, 2, 3): ")
     if decide_obs == '1':  
 
         stones = [obj.Obstacle((0, 0)), obj.Obstacle((20, -20)), obj.Obstacle((-20, 20)), obj.Obstacle((20, 20)), obj.Obstacle((170, 160)), obj.Obstacle((100, 150)), obj.Obstacle((-35, 35)), obj.Obstacle((35, -35)), obj.Obstacle((50, -50)), obj.Obstacle((-50, 50)), obj.Obstacle((-60, 60)), obj.Obstacle((start_loc[0]+30, start_loc[1]+35))] 
@@ -67,7 +67,7 @@ while not generated:
         generated = True
 
     else: 
-        print('choose correctly:', end = " ")
+        print("I did not understand. Please try again.")
     
     screen.update()
 
