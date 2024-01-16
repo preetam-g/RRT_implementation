@@ -49,15 +49,15 @@ while not generated:
 
     elif decide_obs == '3':
 
-        print(f"give coordinates of start node, x then y both absolute value less than {min(obj.HEIGHT, obj.WIDTH)*0.9}:", end = " ")
+        print(f"give coordinates of start node, x then y both absolute value less than {min(obj.HEIGHT, obj.WIDTH)*0.4}:", end = " ")
         start_loc = IN()
         print(f"similarly for end location:", end = " ")
         end_loc = IN()
 
         num = int(input("give num of obstacles you want?:"))
-        print(f"give location x then y in absolute value less than {min(obj.HEIGHT, obj.WIDTH)} seperated with spaces: ")
+        print(f"give location x then y in absolute value less than {min(obj.HEIGHT, obj.WIDTH)*0.4} seperated with spaces: ")
         for x in range(num):
-            print("obstacle {x+1}")
+            print(f"obstacle {x+1}:", end = " ")
             place = IN()
             temp = obj.Obstacle(place)
             if temp.start_goal_safe(start_loc, end_loc): 
@@ -127,11 +127,6 @@ while not obj.goal_found(end_point, nodes):
     time.sleep(0.1)
     screen.update()
     x += 1
-
-temp = end_point.parent
-plotter = tt.Turtle("classic")
-plotter.pu()
-plotter.goto(temp.get_pos())
 
 
 
