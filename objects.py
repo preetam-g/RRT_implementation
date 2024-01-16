@@ -109,6 +109,6 @@ class Node(tt.Turtle):
 def goal_found(goal , all_nodes: list) -> bool:
     near_goal = goal.get_nearest_node(all_nodes)
     if distance(near_goal.get_pos(), goal.get_pos()) < STEP_MAX: 
-        goal.parent(near_goal)
+        goal.set_parent(near_goal)
         return True
     else: return False

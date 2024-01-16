@@ -55,17 +55,20 @@ y_end =  max(start_loc[1], end_loc[1])
 while not obj.goal_found(end_point, nodes):
     
     
-    randx = random.choice(range( x_start, x_end )) # assigning random locations for obstacles
-    randy = random.choice(range( y_start, y_end ))
-    if x%5 == 0: randx, randy = end_loc
-    # x, y = [end_point.get_nearest_node(nodes), nodes[-1]][x%2 == 0].get_pos() # do something for random_node generation
-    # goal_to_node_theta = math.atan2((end_loc[1] - y), (end_loc[0] - x))
-    # theta_range = random.uniform(-0.4, 0.4)
-    # theta_delta = math.pi*2
-    # theta = goal_to_node_theta + theta_range*theta_delta
-    # randx, randy = x + math.cos(theta)*obj.STEP_MAX*3, y + math.sin(theta)*obj.STEP_MAX*3 
+    # randx = random.choice(range( x_start, x_end )) # assigning random locations for obstacles
+    # randy = random.choice(range( y_start, y_end ))
+   
+    # generating random node in the radius of nearest node for goal point
+    n_node = end_point.get_nearest_node(nodes)
+    x, y = n_node.get_pos() 
+    goal_to_node_theta = math.atan2((end_loc[1] - y), (end_loc[0] - x))
+    theta_range = random.uniform(-1, 1)
+    theta_delta = math.pi/2
+    theta = goal_to_node_theta + theta_range*theta_delta
+    dist = obj.distance((x, y), end_loc)
+    randx, randy = x + math.cos(theta)*dist/2, y + math.sin(theta)*dist/2 
 
-    
+    if x%5 == 0: randx, randy = end_loc # this is to bias the tree towards goal point
     temp = obj.Node((randx, randy))
     temp.color("red")
     temp.shapesize(stretch_len = 0.15, stretch_wid = 0.15)
@@ -85,7 +88,7 @@ while not obj.goal_found(end_point, nodes):
         new_node.set_parent(nearest_node)
         nodes.append(new_node)
     
-    time.sleep(0.4)
+    time.sleep(0.1)
     screen.update()
     x += 1
 
