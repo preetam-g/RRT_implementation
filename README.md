@@ -19,9 +19,9 @@ Make sure the main.py and objects.py are in the same directory before running th
 In terminal, move to the directory you have saved the files in. 
 Then use command "python3 main.py" if it's ubuntu or use "python main.py" if it's VS Code.
 There are 3 options on how to run the code. 
-Option 1: Everything is preset.
-Option 2: Everything will be randomly generated.
-Option 3: You can manually set all the variables.
+**Option 1:** Everything is preset. \n
+**Option 2:** Everything will be randomly generated.
+**Option 3:** You can manually set all the variables.
 If you choose option 3, note that the center of the screen is origin and the screen will be divided into 4 quadrants. 
 
 # Test results
