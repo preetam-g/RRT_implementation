@@ -1,16 +1,15 @@
 import objects as obj 
 import turtle as tt
-import random, time
-import math
+import random, time, math
 
-IN = lambda type = int:tuple(map(type, input().split()))
+IN = lambda type = int:tuple(map(type, input().split())) # used to convert input "x y" into a tuple (x, y)
 
 screen = tt.Screen()
 screen.title("RRT_implementation")
 screen.setup(width = obj.WIDTH, height = obj.HEIGHT)
 screen.tracer(0) # refreshes screen only when screen.update() is used
 
-
+# setting default location for start and end
 start_loc = (-200, -200)
 end_loc = (200, 200)
 

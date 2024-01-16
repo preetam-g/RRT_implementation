@@ -18,6 +18,11 @@ Attributes and Methods have been defined based on requirement of the algorithm.
 Make sure the main.py and objects.py are in the same directory before running the program.
 In terminal, move to the directory you have saved the files in. 
 Then use command "python3 main.py" if it's ubuntu or use "python main.py" if it's VS Code.
+There are 3 options on how to run the code. 
+**Option 1:** Everything is preset.
+**Option 2:** Everything will be randomly generated.
+**Option 3:** You can manually set all the variables.
+If you choose option 3, note that the center of the screen is origin and the screen will be divided into 4 quadrants. 
 
 # Test results
 ![test_result_1](https://github.com/preetam-g/RRT_implementation/assets/118665778/3941af10-0776-42f8-bc34-6d97cf170b61)
