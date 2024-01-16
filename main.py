@@ -4,6 +4,7 @@ import random, time, math
 
 IN = lambda type = int:tuple(map(type, input().split())) # used to convert input "x y" into a tuple (x, y)
 
+# creating turtle screen
 screen = tt.Screen()
 screen.title("RRT_implementation")
 screen.setup(width = obj.WIDTH, height = obj.HEIGHT)
