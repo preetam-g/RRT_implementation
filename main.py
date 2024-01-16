@@ -128,7 +128,6 @@ while not obj.goal_found(end_point, nodes):
     screen.update()
     x += 1
 
-
-
+# backtracking in done by identifying parents and going to their locations
 
 screen.exitonclick()
